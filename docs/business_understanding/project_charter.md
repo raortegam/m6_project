@@ -55,6 +55,7 @@ El proyecto contará con un presupuesto estimado de **USD 4,000**, destinado a:
 - Infraestructura en la nube (computación y almacenamiento).
 - Licencias de software y herramientas.
 - Horas de trabajo dedicadas por el equipo técnico.
+  
 Se priorizará el uso de herramientas gratuitas y de libre acceso, con el fin de optimizar los recursos disponibles durante el desarrollo del proyecto.
 
 ## Stakeholders
