@@ -16,12 +16,14 @@ Desarrollar un modelo predictivo de clasificación que identifique la probabilid
 - Desarrollo de un modelo de clasificación para predecir la variable `Churn`.
 - Evaluación del modelo con métricas como precisión, recall, F1 y ROC-AUC.
 - Recomendaciones sobre acciones a tomar para los segmentos con mayor riesgo de churn.
+- Tratamiento del desbalance en la variable objetivo.
 
 ### Excluye:
 
 - Implementación del modelo en sistemas productivos reales.
 - Costeo de campañas de retención basadas en los resultados del modelo.
 - Integración con bases de datos externas o privadas.
+- Generación de reportes financieros o estimaciones económicas asociadas a las decisiones derivadas del modelo.
 
 ## Metodología
 
@@ -53,6 +55,7 @@ El proyecto contará con un presupuesto estimado de **USD 4,000**, destinado a:
 - Infraestructura en la nube (computación y almacenamiento).
 - Licencias de software y herramientas.
 - Horas de trabajo dedicadas por el equipo técnico.
+Se priorizará el uso de herramientas gratuitas y de libre acceso, con el fin de optimizar los recursos disponibles durante el desarrollo del proyecto.
 
 ## Stakeholders
 
