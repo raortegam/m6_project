@@ -32,7 +32,7 @@ Se utilizará una metodología CRISP-DM adaptada a proyectos ágiles. Se incluir
 - Limpieza y transformación del dataset.
 - Entrenamiento de modelos de clasificación (árboles de decisión, random forest, gradient boosting).
 - Evaluación comparativa de modelos.
-- Interpretación de resultados y entrega de recomendaciones.
+- Interpretación de resultados y entrega de recomendaciones (informe final).
 
 ## Cronograma
 
