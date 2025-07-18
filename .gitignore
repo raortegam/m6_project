@@ -3,3 +3,19 @@
 env_vars*
 credentials*
 **/build/*
+
+# Ignore large data files
+*.csv
+*.h5
+*.hdf5
+*.pkl
+*.pkl.gz
+*.parquet
+*.feather
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignore data directories
+data/raw/
+data/processed/
