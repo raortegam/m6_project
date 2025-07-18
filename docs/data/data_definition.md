@@ -27,9 +27,8 @@
   - [ ] Validacion de valores faltantes
   - [ ] Validacion de valores duplicados
   - [ ] En cuanto a transformaciones como:
-    - [ ] Recategorizar variables
-    - [ ] Aplicar funciones sobre las variables continuas
-      No procedio ninguna transformacion
+    - [ ] Recategorizar variables (No procede)
+    - [ ] Aplicar funciones sobre las variables continuas para cambios de escala (No procede) 
 
 ### Base de datos de destino
 
