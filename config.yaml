@@ -1,0 +1,103 @@
+# Configuración del proyecto
+
+# Configuración de rutas de datos
+data:
+  # Nombre de la columna objetivo (target)
+  target_column: 'Churn'  # Ajusta este valor según tu conjunto de datos
+  
+  # Rutas de los archivos de datos
+  raw_data_path: 'data/raw/telco_customer_churn.csv'
+  processed_path: 'data/processed/'
+  
+# Configuración de preprocesamiento
+preprocessing:
+  # Umbral para considerar una columna como categórica (núm. de valores únicos)
+  categorical_threshold: 10
+  
+  # Columnas a excluir del procesamiento automático
+  exclude_columns: []
+  
+  # Tamaño del conjunto de prueba
+  test_size: 0.2
+  random_state: 42
+  
+  # Configuración para manejo de desbalanceo de clases
+  class_imbalance:
+    # Estrategia: 'oversampling', 'undersampling' o null para no aplicar ninguna
+    strategy: 'oversampling'  # 'oversampling', 'undersampling', null
+    # Parámetros específicos para cada estrategia
+    oversampling:
+      sampling_strategy: 'auto'  # 'auto', 'minority', float, o dict
+      random_state: 42
+    undersampling:
+      sampling_strategy: 'auto'  # 'auto', 'majority', float, o dict
+      random_state: 42
+  
+  # Configuración para one-hot encoding
+  one_hot:
+    drop: 'first'  # Opciones: 'first', None, o 'if_binary'
+    sparse: False
+
+# Configuración del modelo
+model:
+  # Hiperparámetros básicos
+  max_depth: 5
+  n_estimators: 100
+  random_state: 42
+  num_boost_round: 1000
+  early_stopping_rounds: 50
+  verbose_eval: 50
+  
+  # Configuración de balanceo de clases
+  scale_pos_weight: 'balanced'  # 'balanced' o un valor numérico específico
+  
+  # Parámetros adicionales que pueden ser optimizados
+  params: {}
+  
+  # Directorio para guardar modelos
+  model_dir: 'models'
+  
+  # Configuración para guardar modelos
+  save_best_only: True
+  save_format: 'pkl'
+  
+# Configuración de evaluación
+evaluation:
+  # Métricas a calcular
+  metrics:
+    - 'accuracy'
+    - 'precision'
+    - 'recall'
+    - 'f1'
+    - 'roc_auc'
+    - 'average_precision'
+  
+  # Umbrales para clasificación binaria
+  threshold: 0.3
+  
+  # Métrica principal para seleccionar el mejor modelo
+  main_metric: 'f1'
+  
+# Configuración de optimización
+optimization:
+  n_trials: 1000
+  timeout: 3600
+  n_splits: 5
+  
+  # Rango de parámetros para optimización
+  params_range:
+    learning_rate: [0.001, 0.1]
+    num_leaves: [20, 300]
+    min_child_samples: [1, 100]
+    feature_fraction: [0.1, 1.0]
+    bagging_fraction: [0.1, 1.0]
+    bagging_freq: [1, 10]
+    reg_alpha: [0.0, 10.0]
+    reg_lambda: [0.0, 10.0]
+    scale_pos_weight: [15.0, 200.0]  # Rango para el peso de la clase minoritaria
+
+# Configuración de logging
+logging:
+  level: 'INFO'  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  file: 'logs/app.log'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
