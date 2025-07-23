@@ -5,8 +5,21 @@
 - **Nombre del modelo:** El modelo entrenado se identifica como `model_20250717_214053.pkl` y su preprocesador como `preprocessor_20250717_214053.pkl`.
 - **Plataforma de despliegue:** La solución se basa en `Docker` para la contenerización, permitiendo su despliegue en cualquier entorno que soporte Docker Engine.
 - **Requisitos técnicos:**
-  * **Versión de Python:** Python 3.9.
-    * **Bibliotecas:** Las librerías se instalan a partir del archivo `requirements.txt`. Además, se instalan `fastapi`, `uvicorn`, y `pandas`.
+  * **Versión de Python:** Python 3.9 o superior.
+    * **Bibliotecas:**  Todas las dependencias necesarias se encuentran listadas en el archivo requirements.txt e incluyen:
+	•	numpy
+	•	pandas
+	•	scikit-learn
+	•	lightgbm
+	•	optuna
+	•	joblib
+	•	PyYAML
+	•	imbalanced-learn
+	•	matplotlib
+	•	seaborn
+	•	fastapi
+	•	uvicorn
+
     * **Hardware:**
         * **CPU:** Se recomienda un mínimo de 2 vCPU para asegurar un rendimiento óptimo y capacidad de respuesta.
         * **RAM:** Mínimo 2 GB de RAM son necesarios; sin embargo, esto puede ajustarse en función del tamaño del modelo cargado y el volumen esperado de solicitudes de inferencia.
@@ -44,13 +57,18 @@
 - **Archivo principal:** El archivo principal que contiene la lógica de la API y la interacción con el modelo es `api/main.py`. Este archivo es el que `Uvicorn` está configurado para ejecutar al iniciar el contenedor.
 
 - **Rutas de acceso a los archivos:**
-    * `./Dockerfile`: Archivo que contiene las instrucciones para construir la imagen Docker del proyecto.
-    * `./requirements.txt`: Archivo que especifica las dependencias de Python del proyecto.
-    * `./api/`: Directorio que contiene todo el código fuente de la aplicación FastAPI.
-        * `./api/main.py`: El script principal de la aplicación FastAPI.
-    * `./api/models/`: Directorio donde se almacenan los modelos y preprocesadores serializados dentro del contenedor.
-        * `./models/model_20250717_214053.pkl`: El archivo del modelo de Machine Learning entrenado.
-        * `./models/preprocessor_20250717_214053.pkl`: El archivo del objeto preprocesador de datos entrenado.
+	•	./Dockerfile: Instrucciones para construir la imagen Docker.
+	•	./requirements.txt: Lista de dependencias Python.
+	•	./api/main.py: Archivo principal de la aplicación FastAPI (ejecutado por Uvicorn).
+	•	./src/models/: Directorio donde se almacenan los modelos y preprocesadores serializados:
+	•	model_20250717_214053.pkl
+	•	model_20250717_214252.pkl
+	•	preprocessor_20250717_214053.pkl
+	•	(Opcional) ./config.yaml: Configuración de rutas, preprocesamiento y parámetros del modelo.
+
+Aclaración sobre el modelo usado
+	•	El archivo principal (/api/main.py) por defecto carga el modelo model_20250717_214053.pkl y el preprocesador preprocessor_20250717_214053.pkl desde /src/models/.
+	•	Para usar otro modelo (ej. model_20250717_214252.pkl), basta con modificar la ruta dentro de /api/main.py o adaptar el código para recibir la ruta del modelo como variable de entorno.
 
 - **Variables de entorno:**
     Actualmente, el `Dockerfile` no expone variables de entorno específicas. Sin embargo, en un entorno de producción, se podrían considerar variables como:
