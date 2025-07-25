@@ -7,20 +7,20 @@
 - **Requisitos técnicos:**
   * **Versión de Python:** Python 3.9 o superior.
     * **Bibliotecas:**  Todas las dependencias necesarias se encuentran listadas en el archivo requirements.txt e incluyen:
-	•	numpy
-	•	pandas
-	•	scikit-learn
-	•	lightgbm
-	•	optuna
-	•	joblib
-	•	PyYAML
-	•	imbalanced-learn
-	•	matplotlib
-	•	seaborn
-	•	fastapi
-	•	uvicorn
+		- numpy
+		- pandas
+		- scikit-learn
+		- lightgbm
+		- optuna
+		- joblib
+		- PyYAML
+		- imbalanced-learn
+		- matplotlib
+		- seaborn
+		- fastapi
+		- uvicorn
 
-    * **Hardware:**
+* **Hardware:**
         * **CPU:** Se recomienda un mínimo de 2 vCPU para asegurar un rendimiento óptimo y capacidad de respuesta.
         * **RAM:** Mínimo 2 GB de RAM son necesarios; sin embargo, esto puede ajustarse en función del tamaño del modelo cargado y el volumen esperado de solicitudes de inferencia.
         * **Espacio en Disco:** Se requieren al menos 5 GB para almacenar la imagen de Docker, el código de la aplicación, los modelos y los archivos de logs.
